@@ -1,0 +1,39 @@
+// Server code 
+
+import socket
+
+host = '127.0.0.1'
+port = 9090
+s = socket.socket()
+s.connect((host,port))
+client_name = input("Enter your name: ")
+message = (client_name.encode('utf-8'))
+while message != 'q':
+    s.send(message)
+    data = s.recv(1024)
+    print('Data recieved from server: \n', data.decode('utf-8').upper())  # This line will print out if the data is sended and received successfully.
+    s.close()  # The connection between client and server is closed.
+	
+	
+// Client code
+import socket
+host = '127.0.0.1'
+port = 9090
+s = socket.socket()
+s.bind((host,port))
+s.listen(1)
+print("Listening...")
+msg=bytes("Hello",'utf-8')
+while True:
+     s, address = s.accept()
+     data = s.recv(1024).decode('utf-8')
+     print ("Connected with: ", address)
+     if not data:
+        break
+     else:
+          dt = str(msg).upper()
+          print ("sending: " + str(dt))  # This line will print out if the data is sended successfully.
+          s.send(msg)
+          print("Message sent")
+     s.close()  # the connection between host and receiver is closed.
+     print("Connection ended!")

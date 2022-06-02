@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	string arr =  "011111101111110";
+	string flag =  "01111110";
+	
+
+
+	int sequence = 0;
+	cout << "Before Stuffing: ";
+	
+	for (int i = 0; i < 15; i++)
+	{
+		cout << arr[i] << ' ';
+	}
+	cout << "-- 15 characters" << endl;
+	cout << "After Stuffing: ";
+	
+	for (int i = 0; i < 15; i++)
+	{
+		if (arr[i] == '1' && arr[i + 1] == '1')
+		{
+			sequence++;
+			if (sequence == 5)
+			{
+				arr.insert(i + 1, "0");
+			}
+		}
+		else
+		{
+			sequence = 0;
+		}
+	}
+	
+	for (int i = 0; i < 17; i++)
+	{
+		cout << arr[i] << ' ';
+	}
+	cout << "-- 17 characters" << endl;
+	cout << "After framing: ";
+	
+	for (int i = 0; i < 8; i++)
+	{
+		cout << flag[i] << ' ';
+	}
+	
+	for (int i = 0; i < 15; i++)
+	{
+		cout << arr[i] << ' ';
+	}
+	
+	for (int i = 0; i < 8; i++)
+	{
+		cout << flag[i] << ' ';
+	}
+	cout << endl;
+
+
+	return 0;
+}

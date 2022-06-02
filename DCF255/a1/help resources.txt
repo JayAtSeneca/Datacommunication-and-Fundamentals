@@ -1,0 +1,4 @@
+// question - 1:
+https://www.easyexamnotes.com/p/client-server-communication.html
+https://users.cs.duke.edu/~chase/cps196/slides/sockets.pdf
+https://en.wikipedia.org/wiki/Client%E2%80%93server_model#:~:text=Client%20and%20server%20communication,-Generally%2C%20a%20service&text=Clients%20and%20servers%20exchange%20messages,example%20of%20inter%2Dprocess%20communication.
